@@ -13,7 +13,7 @@
     "agentVar": null,
     "broadcastCluster": null,
     "broadcastClusterVar": null,
-    "command": "ls -l",
+    "command": "hello world",
     "commandOrScript": "Command",
     "cpDuration": null,
     "cpDurationUnit": "Minutes",
