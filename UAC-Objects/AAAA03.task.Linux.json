@@ -13,7 +13,7 @@
     "agentVar": null,
     "broadcastCluster": null,
     "broadcastClusterVar": null,
-    "command": "hello bob",
+    "command": "hello bobby",
     "commandOrScript": "Command",
     "cpDuration": null,
     "cpDurationUnit": "Minutes",
