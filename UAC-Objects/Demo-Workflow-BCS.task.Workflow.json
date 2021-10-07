@@ -1,0 +1,464 @@
+{
+    "type": "taskWorkflow",
+    "actions": {
+        "abortActions": [],
+        "emailNotifications": [],
+        "setVariableActions": [],
+        "snmpNotifications": [],
+        "systemOperations": []
+    },
+    "calculateCp": false,
+    "calendar": null,
+    "cpDuration": null,
+    "cpDurationUnit": "Minutes",
+    "customField1": {
+        "label": "rerun request",
+        "value": null
+    },
+    "customField2": {
+        "label": "docu link",
+        "value": null
+    },
+    "efDayConstraint": "None",
+    "efDuration": "00:00:00:00",
+    "efEnabled": false,
+    "efNthAmount": 5,
+    "efOffsetDuration": null,
+    "efOffsetDurationUnit": "Minutes",
+    "efOffsetPercentage": 0,
+    "efOffsetType": "Percentage",
+    "efTime": "00:00",
+    "efType": "Time",
+    "exclusiveTasks": [],
+    "executionRestriction": "None",
+    "holdResources": false,
+    "layoutOption": "-- None --",
+    "lfDayConstraint": "None",
+    "lfDuration": "00:00:00:00",
+    "lfEnabled": false,
+    "lfNthAmount": 5,
+    "lfOffsetDuration": null,
+    "lfOffsetDurationUnit": "Minutes",
+    "lfOffsetPercentage": 0,
+    "lfOffsetType": "Percentage",
+    "lfTime": "00:00",
+    "lfType": "Time",
+    "logLevel": "Inherited",
+    "lsDayConstraint": "None",
+    "lsDuration": "00:00:00:00",
+    "lsEnabled": false,
+    "lsNthAmount": 5,
+    "lsTime": "00:00",
+    "lsType": "Time",
+    "name": "Demo-Workflow-BCS",
+    "notes": [],
+    "numberOfTasks": 14,
+    "opswiseGroups": [],
+    "overrideCalendar": false,
+    "resPriority": 10,
+    "resolveNameImmediately": false,
+    "restrictionPeriod": "None",
+    "restrictionPeriodAfterDate": null,
+    "restrictionPeriodAfterTime": null,
+    "restrictionPeriodBeforeDate": null,
+    "restrictionPeriodBeforeTime": null,
+    "restrictionPeriodDateList": [],
+    "retainSysIds": true,
+    "runCriteria": [],
+    "skippedOption": "Show Skipped",
+    "startHeld": false,
+    "startHeldReason": null,
+    "stepActions": [],
+    "stepConditions": [],
+    "summary": "Demo workflow for BCS ",
+    "sysId": "44ba343f5f53497caf201438e503eb58",
+    "timeZonePref": "-- System Default --",
+    "twDelayAmount": null,
+    "twDelayDuration": "00:00:00:00",
+    "twDelayType": "None",
+    "twWaitAmount": null,
+    "twWaitDayConstraint": "None",
+    "twWaitDuration": "00:00:00:00",
+    "twWaitTime": "00:00",
+    "twWaitType": "None",
+    "twWorkflowOnly": "-- System Default --",
+    "userEstimatedDuration": null,
+    "variables": [],
+    "version": 29,
+    "virtualResources": [],
+    "workflowEdges": [
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "210",
+                    "y": "244"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "Monitor-AZ-Blob-Data-Extract",
+                "taskName": "Monitor-AZ-Blob-SO-Data",
+                "value": "5"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "Download-AZ-Data-file",
+                "taskName": "Download-Azure-Blob-SO-Data",
+                "value": "6"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "490",
+                    "y": "244"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "Download-AZ-Data-file",
+                "taskName": "Download-Azure-Blob-SO-Data",
+                "value": "6"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "Transfer-data-File to Process",
+                "taskName": "Transfer-Sales-data to SAP",
+                "value": "3"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "698",
+                    "y": "247"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "Transfer-data-File to Process",
+                "taskName": "Transfer-Sales-data to SAP",
+                "value": "3"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskName": "APPROVAL-Data-analytics-Knime",
+                "value": "14"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "1440",
+                    "y": "250"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "RUN-DATASTAGE-JOBS",
+                "taskName": "RUN-IBM-DATASTAGE-JOB",
+                "value": "23"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "Refresh-workbook-Analytics",
+                "taskName": "Refresh-workbook-SO-Analytics",
+                "value": "20"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "1600",
+                    "y": "250"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "Refresh-workbook-Analytics",
+                "taskName": "Refresh-workbook-SO-Analytics",
+                "value": "20"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskName": "Email-Report-Completion",
+                "value": "26"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "270",
+                    "y": "380"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "Download-AZ-Data-file",
+                "taskName": "Download-Azure-Blob-SO-Data",
+                "value": "6"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskName": "LOAD-TABLE-SSIS-JOB",
+                "value": "29"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "sourceId": {
+                "taskName": "LOAD-TABLE-SSIS-JOB",
+                "value": "29"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskName": "Exec-Java-Script",
+                "value": "32"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "sourceId": {
+                "taskName": "Exec-Java-Script",
+                "value": "32"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "START-MSSQL-JOB -Load-DATA-EXT",
+                "taskName": "LOAD-BILL-DATA-1",
+                "value": "4"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "800",
+                    "y": "250"
+                }
+            ],
+            "sourceId": {
+                "taskName": "APPROVAL-Data-analytics-Knime",
+                "value": "14"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskName": "Process-SO-3",
+                "value": "11"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "sourceId": {
+                "taskName": "UDMScript-Rename-Data-Files",
+                "value": "35"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "RUN-DATASTAGE-JOBS",
+                "taskName": "RUN-IBM-DATASTAGE-JOB",
+                "value": "23"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "sourceId": {
+                "taskName": "Process-SO-3",
+                "value": "11"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskName": "UDMScript-Rename-Data-Files",
+                "value": "35"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "sourceId": {
+                "taskAlias": "START-MSSQL-JOB -Load-DATA-EXT",
+                "taskName": "LOAD-BILL-DATA-1",
+                "value": "4"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "Load-snowflake-Tables",
+                "taskName": "snowflake-execute-a-command-Mroos",
+                "value": "43"
+            }
+        },
+        {
+            "condition": {
+                "value": "Success"
+            },
+            "points": [
+                {
+                    "x": "1470",
+                    "y": "380"
+                }
+            ],
+            "sourceId": {
+                "taskAlias": "Load-snowflake-Tables",
+                "taskName": "snowflake-execute-a-command-Mroos",
+                "value": "43"
+            },
+            "straightEdge": false,
+            "targetId": {
+                "taskAlias": "Refresh-workbook-Analytics",
+                "taskName": "Refresh-workbook-SO-Analytics",
+                "value": "20"
+            }
+        }
+    ],
+    "workflowVertices": [
+        {
+            "alias": "Transfer-data-File to Process",
+            "task": {
+                "value": "Transfer-Sales-data to SAP"
+            },
+            "vertexId": "3",
+            "vertexX": "454",
+            "vertexY": "217"
+        },
+        {
+            "alias": "START-MSSQL-JOB -Load-DATA-EXT",
+            "task": {
+                "value": "LOAD-BILL-DATA-1"
+            },
+            "vertexId": "4",
+            "vertexX": "850",
+            "vertexY": "350"
+        },
+        {
+            "alias": "Monitor-AZ-Blob-Data-Extract",
+            "task": {
+                "value": "Monitor-AZ-Blob-SO-Data"
+            },
+            "vertexId": "5",
+            "vertexX": "40.068965517241395",
+            "vertexY": "210"
+        },
+        {
+            "alias": "Download-AZ-Data-file",
+            "task": {
+                "value": "Download-Azure-Blob-SO-Data"
+            },
+            "vertexId": "6",
+            "vertexX": "252",
+            "vertexY": "219"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "Process-SO-3"
+            },
+            "vertexId": "11",
+            "vertexX": "870",
+            "vertexY": "220"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "APPROVAL-Data-analytics-Knime"
+            },
+            "vertexId": "14",
+            "vertexX": "682",
+            "vertexY": "217"
+        },
+        {
+            "alias": "Refresh-workbook-Analytics",
+            "task": {
+                "value": "Refresh-workbook-SO-Analytics"
+            },
+            "vertexId": "20",
+            "vertexX": "1450",
+            "vertexY": "218"
+        },
+        {
+            "alias": "RUN-DATASTAGE-JOBS",
+            "task": {
+                "value": "RUN-IBM-DATASTAGE-JOB"
+            },
+            "vertexId": "23",
+            "vertexX": "1270",
+            "vertexY": "220"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "Email-Report-Completion"
+            },
+            "vertexId": "26",
+            "vertexX": "1688",
+            "vertexY": "220"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "Upload-Azure-Blob-Seller-Dat"
+            },
+            "vertexId": "28",
+            "vertexX": "37",
+            "vertexY": "673"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "LOAD-TABLE-SSIS-JOB"
+            },
+            "vertexId": "29",
+            "vertexX": "450",
+            "vertexY": "350"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "Exec-Java-Script"
+            },
+            "vertexId": "32",
+            "vertexX": "640",
+            "vertexY": "350"
+        },
+        {
+            "alias": null,
+            "task": {
+                "value": "UDMScript-Rename-Data-Files"
+            },
+            "vertexId": "35",
+            "vertexX": "1050",
+            "vertexY": "220"
+        },
+        {
+            "alias": "Load-snowflake-Tables",
+            "task": {
+                "value": "snowflake-execute-a-command-Mroos"
+            },
+            "vertexId": "43",
+            "vertexX": "1100",
+            "vertexY": "350"
+        }
+    ]
+}
