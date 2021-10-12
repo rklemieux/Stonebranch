@@ -48,7 +48,7 @@
     "agentVar": null,
     "broadcastCluster": null,
     "broadcastClusterVar": null,
-    "command": "dir",
+    "command": "hello bob",
     "commandOrScript": "Command",
     "cpDuration": null,
     "cpDurationUnit": "Minutes",
