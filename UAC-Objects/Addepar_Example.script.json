@@ -1,0 +1,11 @@
+{
+    "content": "env\nls -l\nwhoami",
+    "description": null,
+    "notes": [],
+    "opswiseGroups": [],
+    "resolveVariables": false,
+    "scriptName": "Addepar_Example",
+    "scriptType": "Script",
+    "sysId": "dbb0869f29ff4b2e9a41feb357480de1",
+    "version": 4
+}
