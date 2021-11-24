@@ -1,0 +1,11 @@
+{
+    "content": "#!/opt/universal/python3.6/bin/python3\n\nimport random\nimport string\n\nrandom_value = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))\nfile_name = \"/tmp/tmpfile_{random_value}.txt\".format(random_value=random_value)\nwith open(file_name, \"w\") as f:\n    f.write(random_value)",
+    "description": null,
+    "notes": [],
+    "opswiseGroups": [],
+    "resolveVariables": false,
+    "scriptName": "Addepar_Example_Python",
+    "scriptType": "Script",
+    "sysId": "5c97fe6137ff451eb13a337ca1776caf",
+    "version": 2
+}
