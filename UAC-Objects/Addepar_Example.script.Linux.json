@@ -1,5 +1,5 @@
 {
-    "content": "env\nls -l",
+    "content": "env\nls -l\nwhoami",
     "description": null,
     "notes": [],
     "opswiseGroups": [],
@@ -7,5 +7,5 @@
     "scriptName": "Addepar_Example",
     "scriptType": "Script",
     "sysId": "dbb0869f29ff4b2e9a41feb357480de1",
-    "version": 3
+    "version": 4
 }
