@@ -1,5 +1,5 @@
 {
-    "content": "#!/opt/universal/python3.6/bin/python3\n\nimport random\nimport string\n\nrandom_value = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))\nfile_name = \"/tmp/tmpfile_{random_value}.txt\".format(random_value=random_value)\nwith open(file_name, \"w\") as f:\n    f.write(random_value)",
+    "content": "#!/opt/universal/python3.6/bin/python3\n\nimport random\nimport string\n\nrandom_value = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))\nfile_name = \"/tmp/tmpfile1_{random_value}.txt\".format(random_value=random_value)\nwith open(file_name, \"w\") as f:\n    f.write(random_value)",
     "description": null,
     "notes": [],
     "opswiseGroups": [],
